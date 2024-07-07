@@ -1,9 +1,9 @@
-import React from 'react'
-import './Homepage.css'
+import React from "react";
+import "./Homepage.css";
 
-function Homepage({cryptoData}) {
+function Homepage({ cryptoData }) {
   return (
-    <div className='home-wrapper'>
+    <div className="home-wrapper">
       {/* Normal div */}
       {/* <div>
           <h2>{cryptoData[0].name}</h2>
@@ -17,7 +17,7 @@ function Homepage({cryptoData}) {
       <div>
         {cryptoData.map((crypto, index) => (
           <div key={index}>
-            <ul className='d-flex justify-content-between'>
+            <ul className="d-flex justify-content-between">
               <li>
                 <img
                   src={crypto.image}
@@ -47,4 +47,4 @@ function Homepage({cryptoData}) {
   );
 }
 
-export default Homepage
+export default Homepage;

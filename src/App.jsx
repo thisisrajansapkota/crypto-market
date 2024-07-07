@@ -10,7 +10,7 @@ function App() {
   async function fetchData() {
     try {
       const res = await fetch(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&x_cg_demo_api_key=CG-XfxV1iM8BSkozxBHm943FbwU"
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&x_cg_demo_api_key=${import.meta.env.VITE_API_KEY}`
 
         // "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&x_cg_demo_api_key=CG-XfxV1iM8BSkozxBHm943FbwU"
         // "https://api.coingecko.com/api/v3/search/trending&api_key=CG-XfxV1iM8BSkozxBHm943FbwU"
@@ -26,9 +26,8 @@ function App() {
   useEffect(() => {
     fetchData().then((data) => {
       setCryptoData(data);
-      console.log( "this is cryptoData array" , cryptoData);
+      console.log("this is cryptoData array", cryptoData);
       // console.log([object])
-
     });
   }, []);
 
