@@ -2,47 +2,61 @@ import React from "react";
 import "./Homepage.css";
 
 function Homepage({ cryptoData }) {
+ 
+
   return (
     <div className="home-wrapper">
-      {/* Normal div */}
-      {/* <div>
-          <h2>{cryptoData[0].name}</h2>
-          <p>Symbol: {cryptoData[0].symbol.toUpperCase()}</p>
-          <p>Current Price: ${cryptoData[0].current_price}</p>
-          <p>Market Cap: ${cryptoData[0].market_cap}</p>
-          <img src={cryptoData[0].image} alt={cryptoData[0].name} width="100" height="100" />
-        </div> */}
-
-      {/* Mapped Div */}
-      <div>
-        {cryptoData.map((crypto, index) => (
-          <div key={index}>
-            <ul className="d-flex justify-content-between">
-              <li>
+     
+      <table className="crypto-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>All Time High</th>
+            <th>24h %</th>
+            <th>24h Change</th>
+            <th>Market Cap</th>
+            <th>Volume (24h)</th>
+            <th>Circulating Supply</th>
+            <th>Total Supply</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cryptoData.map((crypto, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td className="d-flex">
                 <img
                   src={crypto.image}
-                  alt={crypto.name}
+                  alt="crypto image"
                   width="50"
                   height="50"
                 />
-              </li>
-              <li>
-                <h4>{crypto.name}</h4>
-              </li>
-              <li>
-                <p>Symbol: {crypto.symbol.toUpperCase()}</p>
-              </li>
-              <li>
-                <p>Current Price: ${crypto.current_price}</p>
-              </li>
+                <h5>{crypto.name}</h5>
+              </td>
+              <td>{crypto.symbol.toUpperCase()}</td>
+              <td>${crypto.current_price.toFixed(2)}</td>
+              <td>${crypto.ath.toFixed(2)}</td>
 
-              <li>
-                <p>Market Cap: ${crypto.market_cap}</p>
-              </li>
-            </ul>
-          </div>
-        ))}
-      </div>
+              <td>{crypto.price_change_percentage_24h.toFixed(2)}%</td>
+              <td>${crypto.price_change_24h.toFixed(2)}</td>
+              <td>${crypto.market_cap.toLocaleString()}</td>
+              <td>${crypto.total_volume.toLocaleString()}</td>
+              <td>
+                {crypto.circulating_supply.toLocaleString()}
+                {crypto.symbol.toUpperCase()}
+              </td>
+              <td>
+                {crypto.total_supply}
+                {crypto.symbol.toUpperCase()}
+              </td>
+              {/* <td>${crypto.id/market_chart/range}</td> */}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

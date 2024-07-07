@@ -1,5 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #2d2929;
+}
 .app-container {
-  background: linear-gradient(to right, #bdd05d, #504b54);
   min-height: 100vh;
   padding-top: 20px;
   /* width: auto; */

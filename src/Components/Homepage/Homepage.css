@@ -1,7 +1,57 @@
-ul,
-li {
-  list-style: none;
+.homepage-container {
+  padding: 20px;
 }
-.home-wrapper {
+
+.crypto-table {
   width: 100%;
+  border-collapse: collapse;
+}
+
+.crypto-table th, .crypto-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+/* .crypto-table td.noBorder {
+  border: none;
+} */
+
+.crypto-table th {
+      background-color: #4a60b8;
+
+
+}
+
+.crypto-table img {
+  margin-right: 8px;
+}
+
+.crypto-table tr:hover {
+    background-color: #1bbbdb;
+
+}
+
+.app-container {
+  background: linear-gradient(to right, #4444af, #00d5ff);
+  padding: 20px;
+}
+
+.crypto-table tr {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.crypto-table tr:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .crypto-table th, .crypto-table td {
+    font-size: 12px;
+  }
+
+  .crypto-table img {
+    width: 18px;
+    height: 18px;
+  }
 }
