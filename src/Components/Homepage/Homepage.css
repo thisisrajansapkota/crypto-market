@@ -2,6 +2,16 @@
   padding: 20px;
 }
 
+.green{
+  color: green;
+  border-color: green;
+}
+.red{
+  color: rgb(105, 8, 14);
+  border-color: rgb(105, 8, 14);
+}
+
+
 .crypto-table {
   width: 100%;
   border-collapse: collapse;

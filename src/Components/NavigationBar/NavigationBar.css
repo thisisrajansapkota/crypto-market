@@ -1,0 +1,26 @@
+.custom-navbar {
+  background-image: linear-gradient(to right, #4facfe, #00f2fe);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #ffffff; /* Brand text color */
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: #ffffff; /* Navbar link text color */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-link:hover {
+  color: #ff5733; /* Hover effect color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+}
+
+.form-select,
+.form-control {
+  max-width: 150px;
+}

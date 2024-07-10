@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Homepage.css";
+import { Button, Form } from "react-bootstrap";
+import { CoinContext } from "../Context/CoinContext";
 
-function Homepage({ cryptoData }) {
- 
+function Homepage() {
+  const { cryptoData, currency } = useContext(CoinContext);
+  const [startIndex, setStartIndex] = useState(0);
+
+  const handleNext = () => {
+    const newIndex = startIndex + 10;
+    if (newIndex < cryptoData.length) {
+      setStartIndex(newIndex);
+    }
+  };
+
+  const handlePrev = () => {
+    const newIndex = startIndex - 10;
+    if (newIndex >= 0) {
+      setStartIndex(newIndex);
+    }
+  };
 
   return (
     <div className="home-wrapper">
-     
+      <h1>
+        Largest <br /> Crypto Marketplace
+      </h1>
+      <p>Welcome to your favourite cryptocurrency Marketplace.</p>
+
+      <Form className="d-flex">
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          className="me-2 form-control"
+          aria-label="Search"
+        />
+        <Button variant="outline-success">Search</Button>
+      </Form>
+
       <table className="crypto-table">
         <thead>
           <tr>
@@ -24,39 +55,73 @@ function Homepage({ cryptoData }) {
           </tr>
         </thead>
         <tbody>
-          {cryptoData.map((crypto, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td className="d-flex">
-                <img
-                  src={crypto.image}
-                  alt="crypto image"
-                  width="50"
-                  height="50"
-                />
-                <h5>{crypto.name}</h5>
-              </td>
-              <td>{crypto.symbol.toUpperCase()}</td>
-              <td>${crypto.current_price.toFixed(2)}</td>
-              <td>${crypto.ath.toFixed(2)}</td>
-
-              <td>{crypto.price_change_percentage_24h.toFixed(2)}%</td>
-              <td>${crypto.price_change_24h.toFixed(2)}</td>
-              <td>${crypto.market_cap.toLocaleString()}</td>
-              <td>${crypto.total_volume.toLocaleString()}</td>
-              <td>
-                {crypto.circulating_supply.toLocaleString()}
-                {crypto.symbol.toUpperCase()}
-              </td>
-              <td>
-                {crypto.total_supply}
-                {crypto.symbol.toUpperCase()}
-              </td>
-              {/* <td>${crypto.id/market_chart/range}</td> */}
-            </tr>
-          ))}
+          {cryptoData
+            .slice(startIndex, startIndex + 10)
+            .map((crypto, index) => (
+              <tr key={index}>
+                <td>{startIndex + index + 1}</td>
+                <td className="d-flex">
+                  <img
+                    src={crypto.image}
+                    alt="crypto image"
+                    width="50"
+                    height="50"
+                  />
+                  <h5>{crypto.name}</h5>
+                </td>
+                <td>{crypto.symbol.toUpperCase()}</td>
+                <td>
+                  {currency.symbol}
+                  {crypto.current_price.toFixed(2)}
+                </td>
+                <td>
+                  {currency.symbol}
+                  {crypto.ath.toFixed(2)}
+                </td>
+                <td
+                  className={
+                    crypto.price_change_percentage_24h.toFixed(2) > 0
+                      ? "green"
+                      : "red"
+                  }
+                >
+                  {crypto.price_change_percentage_24h.toFixed(2)}%
+                </td>
+                <td>
+                  {currency.symbol}
+                  {crypto.price_change_24h.toFixed(2)}
+                </td>
+                <td>
+                  {currency.symbol}
+                  {crypto.market_cap.toLocaleString()}
+                </td>
+                <td>
+                  {currency.symbol}
+                  {crypto.total_volume.toLocaleString()}
+                </td>
+                <td>
+                  {crypto.circulating_supply.toLocaleString()}
+                  {crypto.symbol.toUpperCase()}
+                </td>
+                <td>
+                  {crypto.total_supply}
+                  {crypto.symbol.toUpperCase()}
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
+      <div className="pagination">
+        <Button onClick={handlePrev} disabled={startIndex === 0}>
+          Prev
+        </Button>{" "}
+        <Button
+          onClick={handleNext}
+          disabled={startIndex + 10 >= cryptoData.length}
+        >
+          Next
+        </Button>
+      </div>
     </div>
   );
 }
