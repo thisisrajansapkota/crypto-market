@@ -4,7 +4,14 @@ import { Button, Form } from "react-bootstrap";
 import { CoinContext } from "../Context/CoinContext";
 
 function Homepage() {
-  const { cryptoData, currency } = useContext(CoinContext);
+  const {
+    cryptoData,
+    currency,
+    searchTerm,
+    setSearchTerm,
+    setFilteredData,
+    filteredData,
+  } = useContext(CoinContext);
   const [startIndex, setStartIndex] = useState(0);
 
   const handleNext = () => {
@@ -21,6 +28,19 @@ function Homepage() {
     }
   };
 
+  const handleInput = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setFilteredData(
+      cryptoData.filter((coin) =>
+        coin.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  };
+
   return (
     <div className="home-wrapper">
       <h1>
@@ -28,14 +48,17 @@ function Homepage() {
       </h1>
       <p>Welcome to your favourite cryptocurrency Marketplace.</p>
 
-      <Form className="d-flex">
+      <Form className="d-flex" onSubmit={handleSearch}>
         <Form.Control
+          onChange={handleInput}
           type="search"
           placeholder="Search"
           className="me-2 form-control"
           aria-label="Search"
         />
-        <Button variant="outline-success">Search</Button>
+        <Button variant="light" type="submit">
+          Search
+        </Button>
       </Form>
 
       <table className="crypto-table">
@@ -55,60 +78,123 @@ function Homepage() {
           </tr>
         </thead>
         <tbody>
-          {cryptoData
-            .slice(startIndex, startIndex + 10)
-            .map((crypto, index) => (
-              <tr key={index}>
-                <td>{startIndex + index + 1}</td>
-                <td className="d-flex">
-                  <img
-                    src={crypto.image}
-                    alt="crypto image"
-                    width="50"
-                    height="50"
-                  />
-                  <h5>{crypto.name}</h5>
-                </td>
-                <td>{crypto.symbol.toUpperCase()}</td>
-                <td>
-                  {currency.symbol}
-                  {crypto.current_price.toFixed(2)}
-                </td>
-                <td>
-                  {currency.symbol}
-                  {crypto.ath.toFixed(2)}
-                </td>
-                <td
-                  className={
-                    crypto.price_change_percentage_24h.toFixed(2) > 0
-                      ? "green"
-                      : "red"
-                  }
-                >
-                  {crypto.price_change_percentage_24h.toFixed(2)}%
-                </td>
-                <td>
-                  {currency.symbol}
-                  {crypto.price_change_24h.toFixed(2)}
-                </td>
-                <td>
-                  {currency.symbol}
-                  {crypto.market_cap.toLocaleString()}
-                </td>
-                <td>
-                  {currency.symbol}
-                  {crypto.total_volume.toLocaleString()}
-                </td>
-                <td>
-                  {crypto.circulating_supply.toLocaleString()}
-                  {crypto.symbol.toUpperCase()}
-                </td>
-                <td>
-                  {crypto.total_supply}
-                  {crypto.symbol.toUpperCase()}
-                </td>
-              </tr>
-            ))}
+          {filteredData.length > 0
+            ? filteredData
+                .slice(startIndex, startIndex + 10)
+                .map((crypto, index) => (
+                  <tr key={index}>
+                    <td>{startIndex + index + 1}</td>
+                    <td className="d-flex">
+                      <img
+                        src={crypto.image}
+                        alt="crypto image"
+                        width="50"
+                        height="50"
+                      />
+                      <h5>{crypto.name}</h5>
+                    </td>
+                    <td>{crypto.symbol.toUpperCase()}</td>
+                    <td>
+                      {currency.symbol}
+                      {crypto.current_price.toFixed(2)}
+                    </td>
+                    <td>
+                      {currency.symbol}
+                      {crypto.ath.toFixed(2)}
+                    </td>
+                    <td
+                      className={
+                        crypto.price_change_percentage_24h.toFixed(2) > 0
+                          ? "green"
+                          : "red"
+                      }
+                    >
+                      {crypto.price_change_percentage_24h.toFixed(2)}%
+                    </td>
+                    <td
+                      className={
+                        crypto.price_change_24h.toFixed(2) > 0 ? "green" : "red"
+                      }
+                    >
+                      {currency.symbol}
+                      {crypto.price_change_24h.toFixed(2)}
+                    </td>
+                    <td>
+                      {currency.symbol}
+                      {crypto.market_cap.toLocaleString()}
+                    </td>
+                    <td>
+                      {currency.symbol}
+                      {crypto.total_volume.toLocaleString()}
+                    </td>
+                    <td>
+                      {crypto.circulating_supply.toLocaleString()}
+                      {crypto.symbol.toUpperCase()}
+                    </td>
+                    <td>
+                      {crypto.total_supply}
+                      {crypto.symbol.toUpperCase()}
+                    </td>
+                  </tr>
+                ))
+            : cryptoData
+                .slice(startIndex, startIndex + 10)
+                .map((crypto, index) => (
+                  <tr key={index}>
+                    <td>{startIndex + index + 1}</td>
+                    <td className="d-flex">
+                      <img
+                        src={crypto.image}
+                        alt="crypto image"
+                        width="50"
+                        height="50"
+                      />
+                      <h5>{crypto.name}</h5>
+                    </td>
+                    <td>{crypto.symbol.toUpperCase()}</td>
+                    <td>
+                      {currency.symbol}
+                      {crypto.current_price.toFixed(2)}
+                    </td>
+                    <td>
+                      {currency.symbol}
+                      {crypto.ath.toFixed(2)}
+                    </td>
+                    <td
+                      className={
+                        crypto.price_change_percentage_24h.toFixed(2) > 0
+                          ? "green"
+                          : "red"
+                      }
+                    >
+                      {crypto.price_change_percentage_24h.toFixed(2)}%
+                    </td>
+                    <td
+                      className={
+                        crypto.price_change_24h.toFixed(2) > 0 ? "green" : "red"
+                      }
+                    >
+                      {currency.symbol}
+                      {crypto.price_change_24h.toFixed(2)}
+                    </td>
+                    <td>
+                      {currency.symbol}
+                      {crypto.market_cap.toLocaleString()}
+                    </td>
+                    <td>
+                      {currency.symbol}
+                      {crypto.total_volume.toLocaleString()}
+                    </td>
+                    <td>
+                      {crypto.circulating_supply.toLocaleString()}
+                      {crypto.symbol.toUpperCase()}
+                    </td>
+                    <td>
+                      {crypto.total_supply}
+                      {crypto.symbol.toUpperCase()}
+                    </td>
+                  </tr>
+                ))}
         </tbody>
       </table>
       <div className="pagination">

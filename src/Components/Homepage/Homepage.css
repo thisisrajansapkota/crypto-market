@@ -3,12 +3,10 @@
 }
 
 .green{
-  color: green;
-  border-color: green;
+  color: rgb(0, 255, 0);
 }
 .red{
-  color: rgb(105, 8, 14);
-  border-color: rgb(105, 8, 14);
+  color: rgb(255, 0, 17);
 }
 
 
