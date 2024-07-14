@@ -1,25 +1,64 @@
-*{
+body {
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #2d2929;
-}
-.app-container {
+  font-family: Arial, sans-serif; /* Choose a suitable font */
+  background: linear-gradient(to bottom right, #5c57a9, #4facfe); /* Smooth gradient */
   min-height: 100vh;
-  padding-top: 20px;
-  /* width: auto; */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  padding: 20px;
 }
 
 .gradient-background {
   padding: 20px;
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Limit max width for better readability */
+  border-radius: 8px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
 }
 
 .crypto-card {
   margin-bottom: 20px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+  width: 100%; /* Full width for responsiveness */
+  max-width: 300px; /* Limit card width */
+  background: white; /* Card background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 15px; /* Padding for content */
 }
 
 .crypto-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, h3, p {
+  text-align: center; /* Center text */
+  margin: 10px 0; /* Consistent margins */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .crypto-card {
+    max-width: 90%; /* Use more width on smaller screens */
+  }
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center pagination buttons */
+}
+
+button {
+  margin: 0 5px; /* Space between buttons */
 }

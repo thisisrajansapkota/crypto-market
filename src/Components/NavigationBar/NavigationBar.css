@@ -1,6 +1,6 @@
 .custom-navbar {
-  background-image: linear-gradient(to right, #4facfe, #00f2fe);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to right, #5c57a9, #4facfe); /* Updated gradient to match homepage */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000; /* Ensure it stays on top */
 }
 
@@ -17,10 +17,18 @@
 
 .nav-link:hover {
   color: #ff5733; /* Hover effect color */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+  box-shadow: 0 0 10px rgba(255, 87, 51, 0.3); /* Box shadow on hover */
 }
 
 .form-select,
 .form-control {
-  max-width: 150px;
+  max-width: 200px; /* Increased width for better usability */
+  border-radius: 4px; /* Added border radius for a softer look */
+  border: 1px solid #ddd; /* Subtle border */
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: #4facfe; /* Focus border color to match navbar */
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.5); /* Focus shadow */
 }

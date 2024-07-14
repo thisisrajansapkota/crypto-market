@@ -1,0 +1,15 @@
+.footer {
+  background-color: #5c57a9; /* Match homepage background color */
+  color: #ffffff; /* Text color */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Spacing around the text */
+  position: relative; /* Allow for positioning */
+  bottom: 0; /* Stick to the bottom if needed */
+  width: 100%; /* Full width */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.footer p {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Font size */
+}

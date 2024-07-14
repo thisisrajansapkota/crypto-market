@@ -1,65 +1,84 @@
-.homepage-container {
+.home-wrapper {
+  background-color: #5c57a9; /* Background color for the wrapper */
   padding: 20px;
+  position: relative; /* Needed for absolute positioning of the image */
 }
 
-.green{
-  color: rgb(0, 255, 0);
-}
-.red{
-  color: rgb(255, 0, 17);
+.header-background {
+  background: url('../../assets/homeImage.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1; /* Ensure this stays above the image */
 }
 
+.content-container {
+  max-width: 1200px; /* Adjust based on your layout */
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%; /* Full width */
+  max-width: 400px; /* Limit max width */
+  margin-right: 10px;
+}
+
+.button-wrapper {
+  display: flex; /* Align items */
+}
 
 .crypto-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .crypto-table th, .crypto-table td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 10px; /* Increased padding for better spacing */
   text-align: center;
+  transition: box-shadow 0.3s ease; 
 }
-/* .crypto-table td.noBorder {
-  border: none;
-} */
-
+.crypto-table td:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
 .crypto-table th {
-      background-color: #4a60b8;
-
-
+  background-color: #f4f4f4; /* Header background color */
 }
 
-.crypto-table img {
-  margin-right: 8px;
+.pagination {
+  margin-top: 20px;
+  gap: 40px;
 }
 
-.crypto-table tr:hover {
-    background-color: #1bbbdb;
-
+.hidden {
+  display: none;
 }
 
-.app-container {
-  background: linear-gradient(to right, #4444af, #00d5ff);
-  padding: 20px;
-}
 
-.crypto-table tr {
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.crypto-table tr:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .crypto-table th, .crypto-table td {
-    font-size: 12px;
+  .form-control {
+    max-width: 100%; /* Full width on mobile */
   }
 
-  .crypto-table img {
-    width: 18px;
-    height: 18px;
+  .button-wrapper {
+    flex-direction: column; /* Stack button below input */
+    align-items: stretch; /* Stretch button to full width */
+  }
+
+  .btn {
+    width: 100%; /* Full width for button on small screens */
+    margin-top: 10px; /* Spacing between input and button */
   }
 }
