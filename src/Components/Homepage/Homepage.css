@@ -1,26 +1,46 @@
-.home-wrapper {
-  background-color: #5c57a9; /* Background color for the wrapper */
-  padding: 20px;
-  position: relative; /* Needed for absolute positioning of the image */
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
+/* Home wrapper */
+.home-wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  min-width: 800px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Header background */
 .header-background {
-  background: url('../../assets/homeImage.jpg') no-repeat center center;
+  background: url("../../assets/homeImage.jpg") no-repeat center center;
   background-size: cover;
   padding: 20px;
   border-radius: 8px;
   position: relative;
-  z-index: 1; /* Ensure this stays above the image */
+  min-width: 100%;
+  z-index: 1;
 }
 
+/* Content container */
 .content-container {
-  max-width: 1200px; /* Adjust based on your layout */
-  margin: 0 auto;
-  padding: 20px;
+  width: 100%;
+  min-height: 82vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -28,13 +48,13 @@ h1 {
 }
 
 .form-control {
-  width: 100%; /* Full width */
-  max-width: 400px; /* Limit max width */
+  width: 100%;
+  max-width: 400px;
   margin-right: 10px;
 }
 
 .button-wrapper {
-  display: flex; /* Align items */
+  display: flex;
 }
 
 .crypto-table {
@@ -43,42 +63,67 @@ h1 {
   margin-top: 20px;
 }
 
-.crypto-table th, .crypto-table td {
+.crypto-table th,
+.crypto-table td {
   border: 1px solid #ddd;
-  padding: 10px; /* Increased padding for better spacing */
+  padding: 10px;
   text-align: center;
-  transition: box-shadow 0.3s ease; 
+  transition: box-shadow 0.3s ease;
 }
+
 .crypto-table td:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
 .crypto-table th {
-  background-color: #f4f4f4; /* Header background color */
+  background-color: #f4f4f4;
 }
 
 .pagination {
   margin-top: 20px;
   gap: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .hidden {
   display: none;
 }
 
-
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .content-container {
+    max-width: 90%;
+  }
+}
+
 @media (max-width: 768px) {
   .form-control {
-    max-width: 100%; /* Full width on mobile */
+    max-width: 100%;
   }
 
   .button-wrapper {
-    flex-direction: column; /* Stack button below input */
-    align-items: stretch; /* Stretch button to full width */
+    flex-direction: column;
+    align-items: stretch;
+
   }
 
   .btn {
-    width: 100%; /* Full width for button on small screens */
-    margin-top: 10px; /* Spacing between input and button */
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
+  .content-container {
+    max-width: 95%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    max-width: 100%;
+    padding: 5px;
   }
 }

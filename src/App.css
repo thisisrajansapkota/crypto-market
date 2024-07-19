@@ -1,3 +1,4 @@
+/* General styles */
 body {
   display: flex;
   justify-content: center;
@@ -10,11 +11,29 @@ body {
   min-height: 100vh;
 }
 
+/* App container */
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center; /* Center content horizontally */
+  width: 100%;
+  min-height: 100vh; /* Minimum height to cover the full viewport */
+  margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box; /* Ensure padding and borders are included in the total width and height */
+}
+
+/* Content */
+.content {
+  flex-grow: 1; /* This will make the content area expand to fill the available space */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ensure content area takes the full width */
+  max-width: 1000px; /* Ensure consistent width */
+  margin: 0 auto; /* Center content horizontally */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  min-height: 82vh; /* Ensure footer stays at the bottom when content is minimal */
 }
 
 .gradient-background {
@@ -46,13 +65,7 @@ h1, h2, h3, p {
   margin: 10px 0; /* Consistent margins */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .crypto-card {
-    max-width: 90%; /* Use more width on smaller screens */
-  }
-}
-
+/* Pagination */
 .pagination {
   margin-top: 20px;
   display: flex;
@@ -61,4 +74,31 @@ h1, h2, h3, p {
 
 button {
   margin: 0 5px; /* Space between buttons */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .crypto-card {
+    max-width: 90%; /* Use more width on smaller screens */
+  }
+
+  .app-container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .content {
+    max-width: 95%; /* Adjust width for tablet screens */
+    padding: 10px; /* Adjust padding for content */
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 5px; /* Adjust padding for very small screens */
+  }
+
+  .content {
+    max-width: 100%; /* Use full width on very small screens */
+    padding: 5px; /* Adjust padding for very small screens */
+  }
 }

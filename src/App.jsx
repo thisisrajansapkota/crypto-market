@@ -5,19 +5,15 @@ import Footer from "./Components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
-
   return (
     <div className="app-container">
       <NavigationBar />
-
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-      </Routes>
-
-<Footer />
-
-      {/* <Homepage /> */}
-
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }

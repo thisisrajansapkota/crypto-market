@@ -48,6 +48,9 @@ const CoinContextProvider = (props) => {
     setFilteredData(filteredCoin);
   }, [cryptoData, searchTerm]);
 
+
+
+
   return (
     <CoinContext.Provider value={contextValue}>
       {props.children}
