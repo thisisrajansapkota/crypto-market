@@ -26,7 +26,7 @@ function NavigationBar() {
   return (
     <Navbar expand="lg" fixed="top" className="custom-navbar">
       <Container fluid>
-        <Navbar.Brand href="/">LOGO</Navbar.Brand>
+        <Navbar.Brand href="/">CryptoMate</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>
@@ -49,7 +49,6 @@ function NavigationBar() {
               <option value="aud">AUD</option>
               <option value="eur">EUR</option>
             </Form.Select>
-           
           </div>
         </Navbar.Collapse>
       </Container>

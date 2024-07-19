@@ -1,58 +1,56 @@
-/* General styles */
 body {
   display: flex;
   justify-content: center;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #2d2929;
-  font-family: Arial, sans-serif; /* Choose a suitable font */
-  background: linear-gradient(to bottom right, #5c57a9, #4facfe); /* Smooth gradient */
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #070d27, #354482);
   min-height: 100vh;
 }
 
-/* App container */
 .app-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  align-items: center;
   width: 100%;
-  min-height: 100vh; /* Minimum height to cover the full viewport */
+  min-height: 100vh;
   margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box; /* Ensure padding and borders are included in the total width and height */
+  box-sizing: border-box;
 }
 
-/* Content */
 .content {
-  flex-grow: 1; /* This will make the content area expand to fill the available space */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  width: 100%; /* Ensure content area takes the full width */
-  max-width: 1000px; /* Ensure consistent width */
-  margin: 0 auto; /* Center content horizontally */
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box; /* Include padding in width calculation */
-  min-height: 82vh; /* Ensure footer stays at the bottom when content is minimal */
+  box-sizing: border-box;
+  min-height: 82vh;
 }
 
 .gradient-background {
   padding: 20px;
-  width: 100%; /* Full width */
-  max-width: 1200px; /* Limit max width for better readability */
-  border-radius: 8px; /* Rounded corners */
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .crypto-card {
   margin-bottom: 20px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
-  width: 100%; /* Full width for responsiveness */
-  max-width: 300px; /* Limit card width */
-  background: white; /* Card background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 15px; /* Padding for content */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%;
+  max-width: 300px;
+  background: #303048;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
 }
 
 .crypto-card:hover {
@@ -61,44 +59,43 @@ body {
 }
 
 h1, h2, h3, p {
-  text-align: center; /* Center text */
-  margin: 10px 0; /* Consistent margins */
+  text-align: center;
+  margin: 10px 0;
 }
 
 /* Pagination */
 .pagination {
   margin-top: 20px;
   display: flex;
-  justify-content: center; /* Center pagination buttons */
+  justify-content: center;
 }
 
 button {
-  margin: 0 5px; /* Space between buttons */
+  margin: 0 5px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .crypto-card {
-    max-width: 90%; /* Use more width on smaller screens */
+    max-width: 90%;
   }
 
   .app-container {
-    padding: 10px; /* Adjust padding for smaller screens */
+    padding: 10px;
   }
 
   .content {
-    max-width: 95%; /* Adjust width for tablet screens */
-    padding: 10px; /* Adjust padding for content */
+    max-width: 95%;
+    padding: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .app-container {
-    padding: 5px; /* Adjust padding for very small screens */
+    padding: 5px;
   }
 
   .content {
-    max-width: 100%; /* Use full width on very small screens */
-    padding: 5px; /* Adjust padding for very small screens */
+    max-width: 100%;
+    padding: 5px;
   }
 }

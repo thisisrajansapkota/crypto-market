@@ -1,27 +1,24 @@
-/* Footer styles */
 .footer {
-  background-color: #5c57a9; /* Match homepage background color */
-  color: #ffffff; /* Text color */
-  text-align: center; /* Center the text */
-  padding: 20px 0; /* Padding for top and bottom */
+  background-color: #070d27;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
   margin: 0;
-  position: fixed; /* Fix the footer to the bottom of the viewport */
-  bottom: 0; /* Stick to the bottom of the viewport */
-  width: 100%; /* Full width */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border-top: 1px solid #ddd; /* Top border for separation */
-  box-sizing: border-box; /* Include padding and border in width calculation */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #dddddd;
+  box-sizing: border-box;
 }
 
-/* Footer text styles */
 .footer p {
-  margin: 0; /* Remove default margin */
-  font-size: 14px; /* Font size */
+  margin: 0;
+  font-size: 14px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .footer p {
-    font-size: 12px; /* Slightly smaller font size on smaller screens */
+    font-size: 12px;
   }
 }

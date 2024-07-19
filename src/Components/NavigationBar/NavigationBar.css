@@ -1,34 +1,39 @@
 .custom-navbar {
-  background-image: linear-gradient(to right, #5c57a9, #4facfe); /* Updated gradient to match homepage */
+  background-image: linear-gradient(to right, #070d27, #1f2a55);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 1000;
 }
 
-.navbar-brand {
-  font-weight: bold;
-  color: #ffffff; /* Brand text color */
+.navbar-toggler {
+  border-color: transparent; /* Remove border if needed */
 }
 
+/* .navbar-toggler-icon {
+  color: #4facfe;
+} */
+
+/* Set color for text and links */
+.navbar-brand,
 .nav-link {
-  font-size: 1rem;
-  color: #ffffff; /* Navbar link text color */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: #ffffff !important;
 }
 
 .nav-link:hover {
-  color: #ff5733; /* Hover effect color */
-  box-shadow: 0 0 10px rgba(255, 87, 51, 0.3); /* Box shadow on hover */
+  color: #ff5733;
+  box-shadow: 0 0 10px rgba(255, 87, 51, 0.3);
 }
 
 .form-select,
 .form-control {
-  max-width: 200px; /* Increased width for better usability */
-  border-radius: 4px; /* Added border radius for a softer look */
-  border: 1px solid #ddd; /* Subtle border */
+  max-width: 200px;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+  background-color: #303048;
+  color: #ffffff;
 }
 
 .form-select:focus,
 .form-control:focus {
-  border-color: #4facfe; /* Focus border color to match navbar */
-  box-shadow: 0 0 5px rgba(79, 172, 254, 0.5); /* Focus shadow */
+  border-color: #4facfe;
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
 }
