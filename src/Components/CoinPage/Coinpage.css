@@ -1,0 +1,39 @@
+.coin-page {
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+.coin-header {
+  margin-bottom: 20px;
+}
+
+.coin-stats p {
+  margin-bottom: 10px;
+}
+
+.coin-stats .text-success {
+  color: #28a745;
+}
+
+.coin-stats .text-danger {
+  color: #dc3545;
+}
+
+.coin-details {
+  margin-top: 20px;
+}
+
+.coin-details h6 {
+  margin-bottom: 15px;
+}
+
+.coin-page a {
+  text-decoration: none; }
+
+.coin-page .btn {
+  text-decoration: none; 
+    box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+
+}

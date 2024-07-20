@@ -7,6 +7,9 @@ const CoinContextProvider = (props) => {
   const [filteredData, setFilteredData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+
+  const [coinData, setCoinData] = useState([]);
+  const [coinClicked, setCoinClicked] = useState(false);
   const [currency, setCurrency] = useState({
     name: "usd",
     symbol: "$",
@@ -19,6 +22,10 @@ const CoinContextProvider = (props) => {
     setSearchTerm,
     currency,
     setCurrency,
+    coinData,
+    setCoinData,
+    coinClicked,
+    setCoinClicked,
   };
 
   async function fetchData() {
@@ -36,6 +43,8 @@ const CoinContextProvider = (props) => {
       console.log("Error occurred:", err);
     }
   }
+
+   
 
   useEffect(() => {
     fetchData();

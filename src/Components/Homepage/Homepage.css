@@ -1,22 +1,14 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom right, #070d27, #4154a0);
-  color: #ffffff;
-}
-
 .home-wrapper {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  min-height: 100vh;
+  min-height: 160vh;
+  max-width: 1000px;
   width: 100%;
-  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -26,13 +18,13 @@ body {
   padding: 20px;
   border-radius: 8px;
   position: relative;
-  min-width: 100%;
+  width: 100%;
   z-index: 1;
-  color: #ffffff; /* Ensure text color is white */
+  color: #ffffff;
 }
 
 .header-background h1 {
-  color: #ffffff; /* Ensure header text color is white */
+  color: #ffffff;
 }
 
 .content-container {
@@ -63,10 +55,16 @@ h1 {
   display: flex;
 }
 
+.crypto-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
 .crypto-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  min-width: 800px;
 }
 
 .crypto-table th,
@@ -77,11 +75,14 @@ h1 {
   background-color: #303048;
   color: #ffffff;
   transition: box-shadow 0.3s ease;
+  overflow-wrap: break-word;
 }
 
 .crypto-table td:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+cursor: pointer;
 }
+
 
 .crypto-table th {
   background-color: #1f2a55;
@@ -99,6 +100,12 @@ h1 {
 }
 
 @media (max-width: 1024px) {
+  .crypto-table th,
+  .crypto-table td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
   .content-container {
     max-width: 90%;
   }
@@ -120,6 +127,12 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
+  .crypto-table th,
+  .crypto-table td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
   .content-container {
     max-width: 95%;
     padding: 10px;
@@ -127,6 +140,12 @@ h1 {
 }
 
 @media (max-width: 480px) {
+  .crypto-table th,
+  .crypto-table td {
+    font-size: 0.7rem;
+    padding: 4px;
+  }
+
   .content-container {
     max-width: 100%;
     padding: 5px;
