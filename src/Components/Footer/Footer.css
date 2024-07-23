@@ -1,5 +1,6 @@
 .footer {
-  background-color: #070d27;
+  background-image: linear-gradient(to right, #070d27, #7389de);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #ffffff;
   text-align: center;
   padding: 20px 0;
@@ -7,7 +8,6 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   border-top: 1px solid #dddddd;
   box-sizing: border-box;
 }

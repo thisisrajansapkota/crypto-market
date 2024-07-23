@@ -1,11 +1,11 @@
 .custom-navbar {
-  background-image: linear-gradient(to right, #070d27, #1f2a55);
+  background-image: linear-gradient(to right, #070d27, #7389de);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
 
 .navbar-toggler {
-  border-color: transparent; /* Remove border if needed */
+  border-color: rgb(147, 188, 226) !important; /* Remove border if needed */
 }
 
 /* .navbar-toggler-icon {

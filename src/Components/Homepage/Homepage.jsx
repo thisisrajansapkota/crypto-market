@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { CoinContext } from "../Context/CoinContext";
 import "./Homepage.css";
 import CoinPage from "../CoinPage/CoinPage";
-
+import bitcoinImage from '../../assets/bitcoin.png'
 function Homepage() {
   const {
     cryptoData,
@@ -63,7 +63,18 @@ function Homepage() {
   return (
     <div className="home-wrapper">
       <div className="content-container">
-        <div className="header-background">
+        <div
+          className="header-background"
+          style={{
+            backgroundImage: `url(${bitcoinImage})`,
+            backgroundSize: "550px 250px", // Scales image to cover the entire div
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
+            // width: "550px",
+            // height: "250px",
+          }}
+        >
+          <div className="img">{/* <img src={bitcoinImage} /> */}</div>
           <h1>
             Largest <br /> Crypto Marketplace
           </h1>

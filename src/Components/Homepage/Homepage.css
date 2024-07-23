@@ -1,5 +1,5 @@
 .home-wrapper {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -7,20 +7,25 @@
   align-items: center;
   position: relative;
   min-height: 160vh;
-  max-width: 1000px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .header-background {
-  background: url("../../assets/homeImage.jpg") no-repeat center center;
-  background-size: cover;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
   position: relative;
   width: 100%;
-  z-index: 1;
+  max-width: 1000px; /* Adjust based on your needs */
+  background-image: url("../../assets/bitcoin.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #ffffff;
+  padding: 20px; /* Adjust padding as needed */
+  box-sizing: border-box;
 }
 
 .header-background h1 {
@@ -57,14 +62,17 @@ h1 {
 
 .crypto-table-container {
   width: 100%;
-  overflow-x: auto;
   margin-top: 20px;
 }
 
 .crypto-table {
+  margin: 0;
+  padding: 0;
+  /* display: flex;
+  flex-direction: column; */
   width: 100%;
   border-collapse: collapse;
-  min-width: 800px;
+  /* min-width: 800px; */
 }
 
 .crypto-table th,
@@ -75,14 +83,12 @@ h1 {
   background-color: #303048;
   color: #ffffff;
   transition: box-shadow 0.3s ease;
-  overflow-wrap: break-word;
 }
 
 .crypto-table td:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-cursor: pointer;
+  cursor: pointer;
 }
-
 
 .crypto-table th {
   background-color: #1f2a55;

@@ -30,7 +30,7 @@ function NavigationBar() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-            <Nav.Link href="/" className="nav-link">
+            {/* <Nav.Link href="/" className="nav-link">
               Home
             </Nav.Link>
             <Nav.Link href="#link" className="nav-link">
@@ -38,7 +38,7 @@ function NavigationBar() {
             </Nav.Link>
             <Nav.Link href="#link" className="nav-link">
               Another Link
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <div className="d-flex align-items-center">
             <Form.Select

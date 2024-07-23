@@ -26,6 +26,7 @@ const CoinContextProvider = (props) => {
     setCoinData,
     coinClicked,
     setCoinClicked,
+     fetchData,
   };
 
   async function fetchData() {
