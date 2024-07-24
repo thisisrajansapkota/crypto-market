@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { Navbar, Nav, Container, Form, Button } from "react-bootstrap";
+import { Navbar, Nav, Container, Form } from "react-bootstrap";
 import { CoinContext } from "../Context/CoinContext";
 import "./NavigationBar.css";
+import logo from "../../assets/logo.png";
 
 function NavigationBar() {
   const { setCurrency } = useContext(CoinContext);
@@ -26,7 +27,16 @@ function NavigationBar() {
   return (
     <Navbar expand="lg" fixed="top" className="custom-navbar">
       <Container fluid>
-        <Navbar.Brand href="/">CryptoMate</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img
+            className="logo"
+            src={logo}
+            alt="Logo"
+            // style={{ width: "25px", height: "25px" }}
+          />
+          CryptoMate
+        </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>

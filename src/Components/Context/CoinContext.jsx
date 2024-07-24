@@ -6,8 +6,6 @@ const CoinContextProvider = (props) => {
   const [cryptoData, setCryptoData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
-
   const [coinData, setCoinData] = useState([]);
   const [coinClicked, setCoinClicked] = useState(false);
   const [currency, setCurrency] = useState({
@@ -26,7 +24,7 @@ const CoinContextProvider = (props) => {
     setCoinData,
     coinClicked,
     setCoinClicked,
-     fetchData,
+    fetchData,
   };
 
   async function fetchData() {
@@ -45,8 +43,6 @@ const CoinContextProvider = (props) => {
     }
   }
 
-   
-
   useEffect(() => {
     fetchData();
   }, [currency]);
@@ -57,9 +53,6 @@ const CoinContextProvider = (props) => {
     );
     setFilteredData(filteredCoin);
   }, [cryptoData, searchTerm]);
-
-
-
 
   return (
     <CoinContext.Provider value={contextValue}>

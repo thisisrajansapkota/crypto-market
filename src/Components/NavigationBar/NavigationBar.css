@@ -1,3 +1,11 @@
+.logo {
+  filter: invert(100%);
+  padding-right: 15px;
+  margin-left: 20px;
+  width: 65px;
+  height: 40px;
+
+}
 .custom-navbar {
   background-image: linear-gradient(to right, #070d27, #7389de);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

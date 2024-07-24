@@ -7,9 +7,9 @@
   margin: 0;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100%; /* Ensures full width */
   border-top: 1px solid #dddddd;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensures padding and border are included in width */
 }
 
 .footer p {

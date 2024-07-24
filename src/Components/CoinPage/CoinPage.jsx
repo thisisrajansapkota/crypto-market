@@ -7,62 +7,56 @@ import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 
 function CoinPage() {
-  const { currency, coinData, fetchData } = useContext(CoinContext);
+  const { currency, coinData, setCoinData, fetchData } =
+    useContext(CoinContext);
   const [graphData, setGraphData] = useState(null);
 
   // Fetch graph data from CoinGecko API
   async function fetchGraph() {
     try {
       const url = `https://api.coingecko.com/api/v3/coins/${coinData.id}/market_chart?vs_currency=${currency.name}&days=30`;
-
       const res = await fetch(url);
       const data = await res.json();
       setGraphData(data);
-
     } catch (err) {
       console.log("Error occurred:", err);
     }
   }
 
-  // Fetch coin data and graph data when currency or coinData.id changes
+  // Update coinData and graph data when currency changes
   useEffect(() => {
     fetchData().then((data) => {
       const coin = data.find((coin) => coin.id === coinData.id);
       if (coin) setCoinData(coin);
     });
-    
     fetchGraph();
-  }, [currency.name, coinData.id]);
+  }, [currency]);
 
-
-   useEffect(() => {
-     if (graphData) {
-       console.log("Graph Data parsed:", graphData);
-     }
-   }, [graphData]);
-
-
-const chartData = graphData
-  ? {
-      labels: graphData.prices.map((price) =>
-        moment(price[0]).format("MMM D, YYYY")
-      ),
-      datasets: [
-        {
-          label: `${coinData.name} Price (${currency.symbol})`,
-          data: graphData.prices.map((price) => price[1]),
-          fill: false,
-          backgroundColor: "rgba(75,192,192,0.4)",
-          borderColor: "rgba(75,192,192,1)",
-        },
-      ],
+  useEffect(() => {
+    if (graphData) {
+      console.log("Graph Data parsed:", graphData);
     }
-  : {};
+  }, [graphData]);
 
+  const chartData = graphData
+    ? {
+        labels: graphData.prices.map((price) =>
+          moment(price[0]).format("MMM D, YYYY")
+        ),
+        datasets: [
+          {
+            label: `${coinData.name} Price (${currency.symbol})`,
+            data: graphData.prices.map((price) => price[1]),
+            fill: false,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+          },
+        ],
+      }
+    : {};
 
   return (
     <Container className="coin-page mt-4 rounded">
-
       <Row>
         <Col md={4} className="coin-header">
           <Card className="text-center">
@@ -138,26 +132,21 @@ const chartData = graphData
         </Col>
       </Row>
 
-      {/*  Graph*/}
-<Row> 
-  <Col>
-  <Card>
-    <Card.Body>
-      <h5>
-        Price Chart
-      </h5>
-      {graphData? (
-        <Line data={chartData} />
-      )
-    : 
-    (<p>Loading crypto chart data...</p>) 
-    }
-    </Card.Body>
-
-    </Card></Col>
-</Row>
-
-
+      {/*  Graph */}
+      <Row>
+        <Col>
+          <Card>
+            <Card.Body>
+              <h5>Price Chart</h5>
+              {graphData ? (
+                <Line data={chartData} />
+              ) : (
+                <p>Loading crypto chart data...</p>
+              )}
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
 
       <Row className="mt-4">
         <Col>

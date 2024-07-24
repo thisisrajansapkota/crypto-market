@@ -91,11 +91,15 @@ button {
 
 @media (max-width: 480px) {
   .app-container {
-    padding: 5px;
+      margin: 0;
+  padding: 0;
+    /* padding: 5px; */
   }
 
   .content {
+      margin: 0;
+  padding: 0;
     max-width: 100%;
-    padding: 5px;
+    /* padding: 5px; */
   }
 }

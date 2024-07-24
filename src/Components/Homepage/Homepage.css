@@ -13,23 +13,23 @@
 
 .header-background {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   position: relative;
   width: 100%;
   max-width: 1000px; /* Adjust based on your needs */
-  background-image: url("../../assets/bitcoin.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: #ffffff;
   padding: 20px; /* Adjust padding as needed */
   box-sizing: border-box;
 }
 
 .header-background h1 {
-  color: #ffffff;
+  color: #ffffffb4;
+  font-size: 2rem; /* Adjust font size as needed */
 }
 
 .content-container {
@@ -68,11 +68,8 @@ h1 {
 .crypto-table {
   margin: 0;
   padding: 0;
-  /* display: flex;
-  flex-direction: column; */
   width: 100%;
   border-collapse: collapse;
-  /* min-width: 800px; */
 }
 
 .crypto-table th,
@@ -83,6 +80,7 @@ h1 {
   background-color: #303048;
   color: #ffffff;
   transition: box-shadow 0.3s ease;
+  font-size: 1rem; /* Default font size */
 }
 
 .crypto-table td:hover {
@@ -94,9 +92,10 @@ h1 {
   background-color: #1f2a55;
 }
 
+/* Pagination Styling */
 .pagination {
   margin-top: 20px;
-  gap: 40px;
+  gap: 20px; /* Adjust gap as needed */
   display: flex;
   justify-content: center;
 }
@@ -105,10 +104,27 @@ h1 {
   display: none;
 }
 
+/* Media Queries */
+
+/* For tablets and small desktops (max-width: 1024px) */
 @media (max-width: 1024px) {
+  .header-background h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-control {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .button-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .crypto-table th,
   .crypto-table td {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Adjusted for tablets */
     padding: 8px;
   }
 
@@ -117,9 +133,20 @@ h1 {
   }
 }
 
+/* For tablets in portrait mode and small phones (max-width: 768px) */
 @media (max-width: 768px) {
+  .header-background {
+    padding: 15px;
+    margin: 0; 
+  }
+
+  .header-background h1 {
+    font-size: 1.2rem;
+  }
+
   .form-control {
     max-width: 100%;
+    margin-bottom: 10px;
   }
 
   .button-wrapper {
@@ -135,7 +162,7 @@ h1 {
 
   .crypto-table th,
   .crypto-table td {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Adjusted for portrait tablets and small phones */
     padding: 6px;
   }
 
@@ -145,10 +172,25 @@ h1 {
   }
 }
 
+/* For small phones (max-width: 480px) */
 @media (max-width: 480px) {
+  .header-background {
+    padding: 10px; /* Ensure padding is consistent */
+    margin: 0; /* Ensure no margin */
+  }
+
+  .header-background h1 {
+    font-size: 1rem;
+  }
+
+  .form-control {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
   .crypto-table th,
   .crypto-table td {
-    font-size: 0.7rem;
+    font-size: 0.7rem; /* Smaller font size for small phones */
     padding: 4px;
   }
 

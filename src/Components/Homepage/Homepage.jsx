@@ -4,6 +4,9 @@ import { CoinContext } from "../Context/CoinContext";
 import "./Homepage.css";
 import CoinPage from "../CoinPage/CoinPage";
 import bitcoinImage from '../../assets/bitcoin.png'
+import etherImage from "../../assets/ether.jpg";
+
+
 function Homepage() {
   const {
     cryptoData,
@@ -66,12 +69,16 @@ function Homepage() {
         <div
           className="header-background"
           style={{
-            backgroundImage: `url(${bitcoinImage})`,
-            backgroundSize: "550px 250px", // Scales image to cover the entire div
+            marginTop: "10px",           
+             minHeight: "600px",            
+             backgroundImage: `url(${etherImage})`,
+            backgroundSize: "1000px 1000px", 
+            //  backgroundSize: "auto",
+
             backgroundPosition: "center",
             backgroundAttachment: "fixed",
-            // width: "550px",
-            // height: "250px",
+            // width: "850px",
+            // height: "auto",
           }}
         >
           <div className="img">{/* <img src={bitcoinImage} /> */}</div>
@@ -120,9 +127,9 @@ function Homepage() {
                 <th>24h %</th>
                 <th>24h Change</th>
                 <th>Market Cap</th>
-                <th>Volume (24h)</th>
+                {/* <th>Volume (24h)</th> */}
                 <th>Circulating Supply</th>
-                <th>Total Supply</th>
+                {/* <th>Total Supply</th> */}
               </tr>
             </thead>
             <tbody>
@@ -171,17 +178,17 @@ function Homepage() {
                         {currency.symbol}
                         {crypto.market_cap.toLocaleString()}
                       </td>
-                      <td>
+                      {/* <td>
                         {currency.symbol}
                         {crypto.total_volume.toLocaleString()}
-                      </td>
+                      </td> */}
                       <td>
                         {crypto.circulating_supply.toLocaleString()}{" "}
                         {crypto.symbol.toUpperCase()}
                       </td>
-                      <td>
+                      {/* <td>
                         {crypto.total_supply} {crypto.symbol.toUpperCase()}
-                      </td>
+                      </td> */}
                     </tr>
                   ))
               ) : searchTerm && filteredData.length === 0 ? (
@@ -235,17 +242,17 @@ function Homepage() {
                         {currency.symbol}
                         {crypto.market_cap.toLocaleString()}
                       </td>
-                      <td>
+                      {/* <td>
                         {currency.symbol}
                         {crypto.total_volume.toLocaleString()}
-                      </td>
+                      </td> */}
                       <td>
                         {crypto.circulating_supply.toLocaleString()}{" "}
                         {crypto.symbol.toUpperCase()}
                       </td>
-                      <td>
+                      {/* <td>
                         {crypto.total_supply} {crypto.symbol.toUpperCase()}
-                      </td>
+                      </td> */}
                     </tr>
                   ))
               )}
