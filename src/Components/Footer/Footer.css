@@ -4,12 +4,11 @@
   color: #ffffff;
   text-align: center;
   padding: 20px 0;
-  margin: 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%; /* Ensures full width */
+   width: 100vw;
   border-top: 1px solid #dddddd;
   box-sizing: border-box; /* Ensures padding and border are included in width */
+  position: relative; /* Allow it to flow with the content */
+  margin: 0; /* Remove any default margins */
 }
 
 .footer p {

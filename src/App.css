@@ -16,8 +16,6 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh; 
-  /* margin: 0 auto; */
-  /* padding: 20px; */
   box-sizing: border-box;
 }
 
@@ -26,17 +24,13 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1000px;
-  /* margin: 0 auto; */
-  /* padding: 20px; */
+  /* Removed max-width and margin auto */
   box-sizing: border-box;
   min-height: 82vh;
 }
 
 .gradient-background {
-  /* padding: 20px; */
   width: 100%;
-  max-width: 1200px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.8);
 }
@@ -50,7 +44,6 @@ body {
   color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* padding: 15px; */
 }
 
 .crypto-card:hover {
@@ -91,15 +84,11 @@ button {
 
 @media (max-width: 480px) {
   .app-container {
-      margin: 0;
-  padding: 0;
-    /* padding: 5px; */
+    padding: 0; /* Ensure no padding for small screens */
   }
 
   .content {
-      margin: 0;
-  padding: 0;
     max-width: 100%;
-    /* padding: 5px; */
+    padding: 0; /* Ensure no padding for small screens */
   }
 }
